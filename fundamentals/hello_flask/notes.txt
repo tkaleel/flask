@@ -1,0 +1,21 @@
+1. create folder for project
+2. navigate to folder in terminal
+3. create virtual environment 
+    pip install pipenv (one-time)
+    pipenv shell (will create environment the first time it is run)
+4. install flask
+    pipenv install flask
+5. enter shell
+    pipenv shell
+6. create server.py
+    from flask import Flask  
+    app = Flask(__name__)    
+    @app.route('/')         
+    def hello_world():
+        return 'Hello World!' 
+    #Code below should ALWAYS be at the bottom of server.py file
+    if __name__=="__main__":     
+        app.run(debug=True) 
+7. run server IN SHELL
+    python server.py
+8. navigate to webpage
