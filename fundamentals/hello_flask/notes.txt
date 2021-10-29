@@ -8,14 +8,25 @@
 5. enter shell
     pipenv shell
 6. create server.py
-    from flask import Flask  
+
+    from flask import Flask, render_Template, request, redirect, session  
     app = Flask(__name__)    
-    @app.route('/')         
+    @app.route('/', methods=['POST'])         
     def hello_world():
-        return 'Hello World!' 
+        print(request.form['input'])
+        return render_Template('index.html')
     #Code below should ALWAYS be at the bottom of server.py file
     if __name__=="__main__":     
-        app.run(debug=True) 
+        app.run(debug=True)
+    
+7. create file structure
+    templates
+        index.html
+    static
+        css
+            style.css
+        js
+            script.js
 7. run server IN SHELL
     python server.py
 8. navigate to webpage
