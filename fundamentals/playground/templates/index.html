@@ -10,9 +10,11 @@
 <body>
     <h1 style="text-align: center">Welcome!</h1>
     <div style="display:flex; justify-content: space-evenly;">
-        <div style="width:100px;height:100px;border:2px solid #000; background-color:rgb(47, 109, 99)"></div>
-        <div style="width:100px;height:100px;border:2px solid #000; background-color:rgb(47, 109, 99)"></div>
-        <div style="width:100px;height:100px;border:2px solid #000; background-color:rgb(47, 109, 99)"></div>
+        
+        {% for i in range(0,num) %}
+        <div style="width:100px;height:100px;border:2px solid #000; background-color: {{color}};"></div>
+        {% endfor %}
+    
     </div>
 </body>
 </html>

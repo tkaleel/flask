@@ -8,16 +8,13 @@ def hello_world():
 @app.route('/play/<int:num>')
 def repeat(num):
     for i in range(0,num):
-        return render_template('index.html')
+        return render_template('index.html', num=num, color="blue")
 
-@app.route('/repeat/<int:num>/<string:whatever>')
-def repeat_else(num, whatever):
-    output = ''
-    
+@app.route('/play/<int:num>/<color>')
+def repeat_color(num, color):
     for i in range(0,num):
-        output += f"<p>{whatever}"
-    
-    return output
+        return render_template('index.html', num=num, color=color)
+
 
 if __name__=="__main__":
     app.run(debug=True)                   
