@@ -1,4 +1,3 @@
-import re
 from flask import Flask  
 app = Flask(__name__)    
 @app.route('/')         
@@ -13,12 +12,22 @@ def dojo():
 def say(whatever):
     return whatever
 
-@app.route('/repeat/<num>/<whatever>')
+@app.route('/repeat/<int:num>/<string:whatever>')
 def repeat(num, whatever):
-    new_num = int("num")
+    output = ''
     
-    # for x in range(new_num):
-    #     return whatever
+    for i in range(0,num):
+        output += f"<p>{whatever}"
+    
+    return output
+# @app.route('/repeat/<int:num>/<string:word>')
+# def repeat_word(num, word):
+#     output = ''
+
+#     for i in range(0,num):
+#         output += f"<p>{word}</p>"
+
+#     return output
 
 #Code below should ALWAYS be at the bottom of server.py file
 if __name__=="__main__":     
