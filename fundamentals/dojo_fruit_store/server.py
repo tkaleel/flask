@@ -19,11 +19,18 @@ def checkout():
     session['total'] = total
 
     print("Charging ", request.form['first_name'], "for", total, "fruits." )
-    return render_template("checkout.html")
+    # return render_template("checkout.html")
+    return redirect("/show")
 
 @app.route('/fruits')         
 def fruits():
     return render_template("fruits.html")
+
+@app.route("/show")
+def show_user():
+    print("Showing the User Info From the Form")
+    print(request.form)
+    return render_template("checkout.html")
 
 if __name__=="__main__":   
     app.run(debug=True)    
