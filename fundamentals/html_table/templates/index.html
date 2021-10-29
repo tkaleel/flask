@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-grid.css') }}">
     <title>Document</title>
 </head>
 <body>
     <h1>Students</h1>
-{% for student in students %}
+
     
     <table>
-        <td>{{ student['first_name'] }}</td>
-        <td>{{ student['last_name'] }}</td>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+        </tr>
+        {% for student in students %}
+        <tr class="">
+            <td>{{ student['first_name'] }}</td>
+            <td>{{ student['last_name'] }}</td>
+            <td>{{ student['first_name'] }}  {{ student['last_name'] }}</td>
+        </tr>
+        {% endfor %}
     </table>
-{% endfor %}
+
 
 </body>
 </html>
