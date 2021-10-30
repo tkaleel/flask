@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, session
 app = Flask(__name__)
 # our index route will handle rendering our form
 @app.route('/')
